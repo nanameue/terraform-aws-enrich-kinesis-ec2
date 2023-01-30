@@ -26,6 +26,8 @@ sudo cat << EOF > $${CONFIG_DIR}/enrich.hocon
 ${config}
 EOF
 
+echo "127.0.0.1 $HOSTNAME" | sudo tee -a /etc/hosts
+
 sudo docker run \
   -d \
   --name enrich \
